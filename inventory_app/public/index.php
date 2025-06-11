@@ -6,6 +6,7 @@ use Dotenv\Dotenv;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Smarty;
 
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
@@ -25,6 +26,24 @@ $capsule->addConnection([
 ]);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
+function render(string $template, array $data = []): string
+{
+    static $smarty = null;
+    if ($smarty === null) {
+        $smarty = new Smarty();
+        $smarty->setTemplateDir(__DIR__ . '/../views');
+        $compileDir = __DIR__ . '/../storage/smarty';
+        if (!is_dir($compileDir)) {
+            mkdir($compileDir, 0777, true);
+        }
+        $smarty->setCompileDir($compileDir);
+    }
+    foreach ($data as $k => $v) {
+        $smarty->assign($k, $v);
+    }
+    return $smarty->fetch($template);
+}
 
 (require __DIR__ . '/../src/routes.php')($app);
 

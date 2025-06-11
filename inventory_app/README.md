@@ -18,6 +18,12 @@ Prosta aplikacja webowa do ewidencji wyposażenia firmy oparta o framework Slim 
    ```
 6. Aplikacja będzie dostępna pod `http://localhost:8080`.
 
+### Szablony Smarty
+Aplikacja korzysta z systemu szablonów **Smarty**. Kompilowane pliki są
+zapisywane w katalogu `storage/smarty`. Po instalacji zależności szablony
+renderują prosty interfejs użytkownika oparty o Tailwind CSS. Lista sprzętu
+jest dostępna pod adresem `http://localhost:8080/equipment-ui`.
+
 ### Uwaga
 Jeśli po uruchomieniu zobaczysz błąd o braku klasy `Dotenv`, upewnij się, że
 wszystkie zależności zostały zainstalowane poleceniem `composer install` i w
