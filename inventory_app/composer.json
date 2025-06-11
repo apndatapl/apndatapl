@@ -1,0 +1,18 @@
+{
+    "name": "apndata/equipment-manager",
+    "description": "Prosta aplikacja do ewidencji wyposażenia firmy",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "slim/slim": "^4.10",
+        "slim/psr7": "^1.5",
+        "illuminate/database": "^8.0",
+        "vlucas/phpdotenv": "^5.5",
+        "smarty/smarty": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
