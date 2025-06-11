@@ -18,6 +18,11 @@ Prosta aplikacja webowa do ewidencji wyposażenia firmy oparta o framework Slim 
    ```
 6. Aplikacja będzie dostępna pod `http://localhost:8080`.
 
+### Uwaga
+Jeśli po uruchomieniu zobaczysz błąd o braku klasy `Dotenv`, upewnij się, że
+wszystkie zależności zostały zainstalowane poleceniem `composer install` i w
+katalogu znajduje się folder `vendor`.
+
 ## Struktura projektu
 - `public/` – pliki dostępne publicznie (index.php, zasoby statyczne)
 - `src/` – kontrolery i modele

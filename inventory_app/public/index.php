@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 $app = AppFactory::create();
